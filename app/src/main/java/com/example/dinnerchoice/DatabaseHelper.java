@@ -14,9 +14,9 @@ import com.example.dinnerchoice.datastructures.concrete.KVPair;
 import com.example.dinnerchoice.datastructures.concrete.dictionaries.ArrayDictionary;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "restuarant.db";
-    public static final String TABLE_NAME = "restuarant_table";
-    public static final String COL_1 = "restuarant_name";
+    public static final String DATABASE_NAME = "restaurant.db";
+    public static final String TABLE_NAME = "restaurant_table";
+    public static final String COL_1 = "restaurant_name";
     public static final String COL_2 = "weight";
 
 
@@ -27,7 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME + " (restuarant_name STRING PRIMARY KEY, weight INT)");
+        db.execSQL("create table " + TABLE_NAME + " (restaurant_name STRING PRIMARY KEY, weight INT)");
     }
 
     @Override
