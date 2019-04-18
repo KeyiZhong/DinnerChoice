@@ -61,4 +61,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public void deleteData() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        onUpgrade(db,1,1);
+    }
+
 }

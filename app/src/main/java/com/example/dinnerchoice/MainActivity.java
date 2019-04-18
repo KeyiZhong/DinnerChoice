@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editText_name, editText_weight;
     Button btnAddData;
     Button btnGetResult;
+    Button btnDelData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         AddData();
         btnGetResult = (Button)findViewById(R.id.button_get);
         GetData();
+        btnDelData = (Button)findViewById(R.id.button_del);
+        DeleteData();
     }
     public void AddData() {
         btnAddData.setOnClickListener(
@@ -98,5 +101,16 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle(title);
         builder.setMessage(message);
         builder.show();
+    }
+
+    public void DeleteData() {
+        btnDelData.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        myDb.deleteData();
+                    }
+                }
+        );
     }
 }
